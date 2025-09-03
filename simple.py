@@ -1,16 +1,8 @@
-import random
 import sys
 
 def main():
-    # Randomly decide pass or fail
-    result = random.choice([True, False])
-
-    if result:
-        print("✅ Test Passed")
-        sys.exit(0)  # exit code 0 = success
-    else:
-        print("❌ Test Failed")
-        sys.exit(1)  # exit code 1 = failure
+    print("❌ Test Failed (forced failure for Jenkins test)!")
+    sys.exit(1)   # non-zero exit code → Jenkins marks build as failed
 
 if __name__ == "__main__":
     main()
